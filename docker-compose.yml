@@ -1,0 +1,27 @@
+version: '3'
+services:
+  gin:
+   # build:
+   #   context: ./gin
+   #   dockerfile: Dockerfile
+   # build: ./gin/Dockerfile
+    image: project_demo2_gin:1
+    container_name: pro_gin
+    restart: always
+    ports:
+      - 9090:9090
+    env_file:
+      - ./.env
+    environment:
+      XYZ_OPTS: "xyz"
+      ENV_OPTS: "env"
+  vue:
+    # build:
+    #  context: ./test
+    #  dockerfile: Dockerfile
+    # build: ./test/Dockerfile
+    image: project_demo2_vue:1
+    container_name: pro_vue
+    restart: always
+    ports:
+      - 8000:80
